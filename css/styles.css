@@ -1,0 +1,39 @@
+h1, h2
+{
+    text-align: center;
+}
+
+body
+{
+    background-color: grey !important;
+}
+
+/*------------------------------ Navigation Bar ------------------------------*/
+.navbar
+{
+    background-color: green;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a
+{
+    float: left;
+    color: gold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover
+{
+    color: white;
+}
+
+.navbar a.active
+{
+    background-color: black;
+    color: white;
+}
+/*----------------------------------------------------------------------------*/
