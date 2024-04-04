@@ -11,7 +11,7 @@ function pageHeader($logo, $arr)
         if ($item == "Home")
         {
             $mLink = "index.php";
-            echo "<a href=\"$mLink\"><span class=\"m-4\"></span>$item</a>";
+            echo "<a class=\"active\" href=\"$mLink\"><span class=\"m-4\"></span>$item</a>";
         }
         else
         {
