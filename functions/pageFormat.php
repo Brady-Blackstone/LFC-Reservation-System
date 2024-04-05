@@ -1,22 +1,35 @@
 <?php
+echo "<link rel=\"stylesheet\" href=\"css/styles.css\">";
 
-echo "<link rel=\"stylesheet\" href=\"../css/styles.css\">";
-
-function pageHeader($logo, $arr)
+function pageHeader($title, $arr)
 {
-    echo "<img src=\"$logo\" alt=\"$logo\" width=\"125\" height=\"125\">";
+    echo "<img src=\"./img/LFC-Logo.jpg\" alt=\"./img/LFC-Logo.jpg\" width=\"46\" height=\"72\">";
 
+    echo "<div class=\"navbar\">";
     foreach($arr as $item)
     {
         if ($item == "Home")
         {
             $mLink = "index.php";
-            echo "<a class=\"active\" href=\"$mLink\"><span class=\"m-4\"></span>$item</a>";
+        }
+        elseif ($item == "Admin Page")
+        {
+            $mLink = "Admin.php";
+        }
+        elseif ($item == "Contact Us")
+        {
+            $mLink = "Contact-us.php";
         }
         else
         {
             $mLink = $item.".php";
-            echo "<a href=\"$mLink\"><span class=\"m-4\"></span>$item</a>";
         }
+
+        // Check if the current item matches the current page
+        // If it does, make the class active, else make it empty
+        // Then print out the link for the current item
+        $class = ($item == $title) ? 'class="active"' : '';
+        echo "<a $class href=\"$mLink\">$item</a>";
     }
+    echo "</div>";
 }

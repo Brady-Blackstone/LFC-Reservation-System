@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Contact Us | littlefishingcreek</title>
         
-        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -14,19 +18,15 @@
     <body>
         <h1>Little Fishing Creek Golf Course</h1>
 
-        <div class="navbar">
-            <a href="../index.html">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./rates.html">Rates</a>
-            <a href="./events.html">Events</a>
-            <a href="./login.html">Login</a>
-            <a href="./signup.html">Signup</a>
-            <a href="./reservation.html">Reservations</a>
-            <a href="./admin.html">Admin Page</a>
-            <a class="active" href="./contact-us.html">Contact Us</a>
-        </div>
+        <?php
+        require_once './functions/pageFormat.php';
+
+        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+        pageHeader("Contact Us", $arr);
+        ?>
 
         <h1>Contact Us</h1>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                 crossorigin="anonymous">

@@ -1,11 +1,98 @@
-h1, h2
-{
-    text-align: center;
-}
-
 body
 {
-    background-color: grey !important;
+    background-color: cornsilk !important;
+    height: 100%;
+}
+
+h1, h2, p
+{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+input
+{
+    width: 100%;
+}
+
+button
+{
+    width: 150px;
+    margin: 10px 50px;
+}
+
+.acceptImg
+{
+    padding: 0px 0px 0px 3px;
+}
+
+.btnL
+{
+    width: 130px;
+}
+
+.inWidth
+{
+    width: 186px !important;
+}
+
+.btnCenter
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-floating
+{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    margin: 3px 0px;
+}
+
+.form-select
+{
+    height: 58px;
+    margin-top: 3px;
+}
+
+.form-control, .form-select
+{
+    border-radius: 1 !important;
+    border: 1px solid black !important;
+}
+
+.login_box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 375px !important;
+    width: 400px !important;
+    /*Border*/
+    margin: auto;
+    margin-top: 30px;
+    background-color: #40323499;
+    backdrop-filter: blur(2px);
+    box-shadow: inset -5px -5px #68747799;
+    border-radius: 25px;
+}
+
+.signup_box
+{
+    display: flex;
+    flex-direction: column;
+    height: 670px !important;
+    width: 630px !important;
+    /*Border*/
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #40323499;
+    backdrop-filter: blur(2px);
+    box-shadow: inset -5px -5px #68747799;
+    border-radius: 25px;
 }
 
 /*------------------------------ Navigation Bar ------------------------------*/
@@ -20,7 +107,7 @@ body
 .navbar a
 {
     float: left;
-    color: gold;
+    color: #caaa3f;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
