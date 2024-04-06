@@ -27,7 +27,7 @@ session_start();
 
         <!-- This form is centered on the page and has floating placeholder / label values -->
         <div class="container d-flex justify-content-center signup_box">
-            <h1>Signup Page</h1>
+            <h2>Signup</h2>
             <br>
             <p>Please fill in the following fields to create an account</p>
             <form id="signup" action="./handlers/Signup-Handler.php" method="POST">

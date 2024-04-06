@@ -25,8 +25,38 @@ session_start();
         pageHeader("Contact Us", $arr);
         ?>
 
-        <h1>Contact Us</h1>
-        
+        <h2>Contact Us</h2>
+
+        <br>
+
+        <h3>Little Fishing Creek Golf Course</h3>
+
+        <table>
+            <tr>
+                <td>65 Highway 22 West</td>
+            </tr>
+            <tr>
+                <td>Milledgeville, GA 31061</td>
+            </tr>
+            <tr>
+                <td>(478) 445-0796</td>
+            </tr>
+            <tr>
+                <td>kwall@baldwincountyga.com</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <iframe
+            width="60%"
+            height="20%"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9720.441261972403!2d-83.28951404829509!3d33.09017105053608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f6c7dd0d34b8a7%3A0xb323ab6ea6810407!2sLittle%20Fishing%20Creek%20Golf%20Course!5e0!3m2!1sen!2sus!4v1712423486546!5m2!1sen!2sus">
+        </iframe>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                 crossorigin="anonymous">

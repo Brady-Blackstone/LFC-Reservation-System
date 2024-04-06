@@ -25,8 +25,24 @@ session_start();
         pageHeader("Events", $arr);
         ?>
 
-        <h1>Golf Events & Tournaments</h1>
-        
+        <h2>Golf Events & Tournaments</h2>
+
+        <p>
+            The Little Fishing Creek Golf Course offers local communities, business, colleges, churches, etc. to come and host 
+            events and tournaments. Below you will find a list of all current golf events and tournaments that are taking place at 
+            the Little Fishing Creek Golf Course. If you would like to sign up for anything listed below, or want to plan your own 
+            golf event and/or tournament, give us a call at (478) 445-0796.
+        </p>
+
+        <ul class="ulHeader">
+            <li>Weekly Events:</li>
+            <li class="liBullet">Wednesday and Thursday Blitz starting at 9:00 a.m.</li>
+        </ul>
+        <ul class="ulHeader">
+            <li>Upcoming Events/Tournaments:</li>
+            <li class="liBullet"></li>
+        </ul>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                 crossorigin="anonymous">

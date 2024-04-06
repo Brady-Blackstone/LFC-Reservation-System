@@ -25,7 +25,7 @@ session_start();
         pageHeader("About", $arr);
         ?>
 
-        <h1>About the Little Fishing Creek Golf Course!</h1>
+        <h2>About the Little Fishing Creek Golf Course!</h2>
 
         <p>
             Little Fishing Creek Golf Course opened in 1981. It is an 18 hole public golf 

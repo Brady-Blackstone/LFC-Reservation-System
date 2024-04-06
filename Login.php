@@ -26,7 +26,7 @@ session_start();
         ?>
 
         <div class="container d-flex justify-content-center login_box">
-            <h1>Login Page</h1>
+            <h2>Login</h2>
             <form id="login" action="./handlers/Login-Handler.php" method="POST">
                 <div class="row mb-1 justify-content-center">
                     <div class="col-auto">
