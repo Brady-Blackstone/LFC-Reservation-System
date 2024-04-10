@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>About | littlefishingcreek</title>
         
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -21,7 +21,19 @@ session_start();
         <?php
         require_once './functions/pageFormat.php';
 
-        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+        // Display the navigation bar based on user/admin privelages or if no one is logged in
+        if (isset($_SESSION['user']))
+        {
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Contact Us");
+        }
+        else if (isset($_SESSION['admin']))
+        {
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page", "Contact Us");
+        }
+        else
+        {
+            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+        }
         pageHeader("About", $arr);
         ?>
 

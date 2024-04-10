@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login | littlefishingcreek</title>
         
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -21,13 +21,22 @@ session_start();
         <?php
         require_once './functions/pageFormat.php';
 
+        // Display navigation bar before anyone logs in
         $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
         pageHeader("Login", $arr);
+
+        // Display an error message if the admin or user does not exist in the database
+        if (isset($_SESSION['errMsg']))
+        {
+            $m = $_SESSION['errMsg'];
+            unset($_SESSION['errMsg']);
+            echo "<h5 class=\"alert alert-warning\">$m</h5>";
+        }
         ?>
 
         <div class="container d-flex justify-content-center login_box">
             <h2>Login</h2>
-            <form id="login" action="./handlers/Login-Handler.php" method="POST">
+            <form action="./handlers/loginHandler.php" method="POST">
                 <div class="row mb-1 justify-content-center">
                     <div class="col-auto">
                         <div class="form-floating">
@@ -39,7 +48,7 @@ session_start();
                 <div class="row mb-1 justify-content-center">
                     <div class="col-auto">
                         <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="Password*" id="pwd" name="pwd" required>
+                            <input type="password" class="form-control" placeholder="Password*" id="pwd" name="pwd" required>
                             <label for="pwd">Password*</label>
                         </div>
                     </div>
@@ -49,34 +58,12 @@ session_start();
                     <div class="col">
                         <div class="d-flex justify-content-end">
                             <button type="reset" class="btn btn-dark btnL me-2">Cancel</button>
-                            <button type="submit" class="btn btn-dark btnL ms-4">Signup</button>
+                            <button type="submit" class="btn btn-dark btnL ms-4">Login</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-
-        <script>
-            document.getElementById('login').addEventListener('submit', function(event)
-            {
-                // Prevent the signup button from submitting normally to an action file
-                event.preventDefault();
-
-                // Get form values
-                const userID = document.getElementById('userID').value;
-                const pwd = document.getElementById('pwd').value;
-
-                // JSON object
-                const loginData = 
-                {
-                    USERNAME: userID,
-                    PASSWORD: pwd
-                };
-
-                // Display JSON object as a string in the console and can be sent to the server
-                console.log(JSON.stringify(loginData));
-            });
-        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 

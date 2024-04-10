@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 ?>
 
@@ -9,7 +13,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Signup | littlefishingcreek</title>
         
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -21,8 +25,21 @@ session_start();
         <?php
         require_once './functions/pageFormat.php';
 
+        // Display navigation bar before anyone signs up
         $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
         pageHeader("Signup", $arr);
+
+        // Display an error message if the any of the entered information is invalid
+        // From client-side
+        echo "<h5 id=\"errMsg\" class=\"alert alert-warning\"></h5>";
+
+        // From server-side, just in case a user's browser has javascript disabled
+        if (isset($_SESSION['errMsg']))
+        {
+            $m = $_SESSION['errMsg'];
+            unset($_SESSION['errMsg']);
+            echo "<h5 class=\"alert alert-warning\">$m</h5>";
+        }
         ?>
 
         <!-- This form is centered on the page and has floating placeholder / label values -->
@@ -30,7 +47,7 @@ session_start();
             <h2>Signup</h2>
             <br>
             <p>Please fill in the following fields to create an account</p>
-            <form id="signup" action="./handlers/Signup-Handler.php" method="POST">
+            <form action="./handlers/signupHandler.php" onsubmit="return validateSignupForm()" method="POST">
                 <!-- 1st Row: Name -->
                 <div class="row mb-1">
                     <label>Your Name*</label>
@@ -79,25 +96,25 @@ session_start();
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="email" class="form-control" placeholder="Email*" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?" id="email" name="email" required>
+                            <input type="email" class="form-control" placeholder="Email*" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}(?:.[a-zA-Z]{2,})?" id="email" name="email" required>
                             <label for="email">Email*</label>
                         </div>
                     </div>
                 </div>
                 <!-- 3rd Row: Card Details -->
                 <div class="row mb-1">
-                <label>Card Details*</label>
+                <label>Card Details</label>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="Card Number*" id="card" name="card" maxlength="16" required>
-                            <label for="card">Card Number*</label>
+                            <input type="text" class="form-control" placeholder="Card Number" id="card" name="card" maxlength="16">
+                            <label for="card">Card Number</label>
                             <img src="" alt="Card Type" id="cardImg" class="position-absolute top-0 end-0 mt-2 me-2" style="max-height: 30px; display: none;">
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="Name on Card*" id="cName" name="cName" required>
-                            <label for="cName">Name on Card*</label>
+                            <input type="text" class="form-control" placeholder="Name on Card" id="cName" name="cName">
+                            <label for="cName">Name on Card</label>
                         </div>
                     </div>
                 </div>
@@ -106,19 +123,19 @@ session_start();
                 <div class="row mb-1">
                 <label>Expiration Date*</label>
                     <div class="col-sm">
-                        <select class="form-select" placeholder="Month*" id="month" name="month" required>
-                            <option disabled selected>Month*</option>
+                        <select class="form-select" placeholder="Month" id="month" name="month">
+                            <option disabled selected>Month</option>
                         </select>
                     </div>
                     <div class="col-sm">
-                        <select class="form-select" placeholder="Year*" id="year" name="year" required>
-                            <option disabled selected>Year*</option>
+                        <select class="form-select" placeholder="Year*" id="year" name="year">
+                            <option disabled selected>Year</option>
                         </select>
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="CVV/CVC*" id="cvv" name="cvv" maxlength="3" required>
-                            <label for="cvv">CVV/CVC*</label>
+                            <input type="text" class="form-control" placeholder="CVV/CVC" id="cvv" name="cvv" maxlength="3">
+                            <label for="cvv">CVV/CVC</label>
                         </div>
                     </div>
                 </div>
@@ -129,6 +146,9 @@ session_start();
                 </div>
             </form>
         </div>
+
+        <!-- import the validate.js file before waiting for the DOM content to load -->
+        <script src="./js/validate.js"></script>
 
         <script>
             document.addEventListener("DOMContentLoaded", function()
@@ -251,53 +271,9 @@ session_start();
                     opt.value = y;
                     yearDrop.appendChild(opt);
                 }
-
-        // _________________________________________________________________________________________________________________________
-
-                document.getElementById('signup').addEventListener('submit', function(event)
-                {
-                    // Prevent the signup button from submitting normally to an action file
-                    event.preventDefault();
-
-                    function checkPWD(pwd, cpwd)
-                    {
-                        return pwd === cpwd;
-                    }
-
-                    // Get form values
-                    const fname = document.getElementById('fname').value;
-                    const lname = document.getElementById('lname').value;
-                    const userID = document.getElementById('userID').value;
-                    const pwd = document.getElementById('pwd').value;
-                    const cpwd = document.getElementById('cpwd').value;
-                    const phone = document.getElementById('phone').value;
-                    const email = document.getElementById('email').value;
-
-                    // If both passwords do not match, stop further execution of this script
-                    if (!checkPWD(pwd, cpwd))
-                    {
-                        alert("Passwords do not match!");
-                        event.preventDefault();
-                    }
-
-                    // JSON object
-                    const signupData = 
-                    {
-                        F_NAME: fname,
-                        L_NAME: lname,
-                        USERNAME: userID,
-                        PASSWORD: pwd,
-                        PHONE_NUM: phone,
-                        EMAIL: email
-                    };
-
-                    // Display JSON object as a string in the console and can be sent to the server
-                    console.log(JSON.stringify(signupData));
-                });
             });
         </script>
 
-        <script src="./js/validate.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                 crossorigin="anonymous">

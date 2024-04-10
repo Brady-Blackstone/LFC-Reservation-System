@@ -65,6 +65,11 @@ iframe
     padding: 0px 10px;
 }
 
+#errMsg
+{
+    display: none;
+}
+
 .ulHeader
 {
     list-style-type: disc;
