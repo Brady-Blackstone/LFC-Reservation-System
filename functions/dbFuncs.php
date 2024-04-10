@@ -10,8 +10,8 @@ function connectDB()
     // for production server
     // $host = "localhost";
     // $db = "u643483751_LFC_DB";
-    // $user = "u643483751_phpUser";
-    // $pwd = "PHPUser@12345";
+    // $user = "u643483751_jsUser";
+    // $pwd = "JSUser@12345";
 
     $attr = "mysql: host=$host; dbname=$db";
     $opts =
