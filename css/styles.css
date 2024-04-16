@@ -156,7 +156,7 @@ iframe
 }
 
 /*------------------------------ Navigation Bar ------------------------------*/
-.navbar
+.nav
 {
     background-color: green;
     overflow: hidden;
@@ -164,7 +164,7 @@ iframe
     padding: 0;
 }
 
-.navbar a
+.nav a
 {
     float: left;
     color: #caaa3f;
@@ -173,12 +173,12 @@ iframe
     text-decoration: none;
 }
 
-.navbar a:hover
+.nav a:hover
 {
     color: white;
 }
 
-.navbar a.active
+.nav a.active
 {
     background-color: black;
     color: white;

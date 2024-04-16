@@ -1,11 +1,9 @@
 <?php
-echo "<link rel=\"stylesheet\" href=\"css/styles.css\">";
-
 function pageHeader($title, $arr)
 {
     echo "<img src=\"./img/LFC-Logo.jpg\" alt=\"./img/LFC-Logo.jpg\" width=\"46\" height=\"72\">";
 
-    echo "<div class=\"navbar\">";
+    echo "<div class=\"nav\">";
     foreach($arr as $item)
     {
         if ($item == "Home")
