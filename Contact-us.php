@@ -28,11 +28,11 @@ session_start();
         }
         else if (isset($_SESSION['admin']))
         {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page", "Contact Us");
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
         }
         else
         {
-            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Contact Us");
         }
         pageHeader("Contact Us", $arr);
         ?>

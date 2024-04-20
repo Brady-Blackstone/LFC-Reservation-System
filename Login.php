@@ -22,7 +22,7 @@ session_start();
         require_once './functions/pageFormat.php';
 
         // Display navigation bar before anyone logs in
-        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Contact Us");
         pageHeader("Login", $arr);
 
         // Display an error message if the admin or user does not exist in the database

@@ -26,7 +26,7 @@ session_start();
         require_once './functions/pageFormat.php';
 
         // Display navigation bar before anyone signs up
-        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Admin Page", "Contact Us");
+        $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Contact Us");
         pageHeader("Signup", $arr);
 
         // Display an error message if the any of the entered information is invalid

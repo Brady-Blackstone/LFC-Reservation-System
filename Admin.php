@@ -1,7 +1,7 @@
 <?php
 session_start();
-// if (!isset($_SESSION['admin']))
-//     die("No access!");
+if (!isset($_SESSION['admin']))
+    die("No access!");
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ session_start();
         require_once './functions/pageFormat.php';
 
         // Display navigation bar for the admin
-        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page", "Contact Us");
+        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
         pageHeader("Admin Page", $arr);
         ?>
 
