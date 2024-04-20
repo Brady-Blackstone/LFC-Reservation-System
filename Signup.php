@@ -141,8 +141,8 @@ session_start();
                 </div>
     
                 <div class="btnCenter">
-                    <button type="reset" class="btn btn-dark">Cancel</button>
-                    <button type="submit" class="btn btn-dark">Signup</button>
+                    <button type="reset" class="btn btn-dark me-4">Cancel</button>
+                    <button type="submit" class="btn btn-dark ms-4">Signup</button>
                 </div>
             </form>
         </div>
