@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!isset($_SESSION['user']) || !isset($_SESSION['admin']))
+    die("No access!");
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +31,6 @@ session_start();
         else if (isset($_SESSION['admin']))
         {
             $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
-        }
-        else
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Contact Us");
         }
         pageHeader("Reservations", $arr);
         ?>

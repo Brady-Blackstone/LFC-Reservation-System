@@ -32,7 +32,7 @@ session_start();
         }
         else
         {
-            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Reservations", "Contact Us");
+            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Contact Us");
         }
         pageHeader("Events", $arr);
         ?>
