@@ -60,4 +60,5 @@ if ($stmt->rowCount() > 0)
 // Encode the error messagee before sending it back to the user
 $_SESSION['errMsg'] = "Invalid Username or Password, Try again";
 header("Location: ../Login.php");
+$pdo = null;
 exit();

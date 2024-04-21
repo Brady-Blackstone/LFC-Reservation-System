@@ -53,17 +53,17 @@ session_start();
             <caption>Green Fees</caption>
             <thead>
                 <tr>
-                    <th class="rotate">Weekdays</th>
+                    <th>Weekdays</th>
                     <td>$12.50 All Day</td>
                     <td>$10.50 Twilight</td>
                 </tr>
                 <tr>
-                    <th class="rotate">Weekends</th>
+                    <th>Weekends</th>
                     <td>$15.50 All Day</td>
                     <td>$13.50 Twilight</td>
                 </tr>
                 <tr>
-                    <th class="rotate">Holidays</th>
+                    <th>Holidays</th>
                     <td>$15.50 All Day</td>
                     <td>$13.50 Twilight</td>
                 </tr>
@@ -76,12 +76,12 @@ session_start();
             <caption>Cart Fees</caption>
             <thead>
                 <tr>
-                    <th class="rotate">Nine Holes</th>
+                    <th>Nine Holes</th>
                     <td>$8.00 Each</td>
                     <td>Trail Fee $7.50</td>
                 </tr>
                 <tr>
-                    <th class="rotate">Eighteen Holes</th>
+                    <th>Eighteen Holes</th>
                     <td>$12.00 Each</td>
                 </tr>
             </thead>
@@ -100,29 +100,29 @@ session_start();
 
         <table>
             <tr>
-                <th class="rotate">High School & Under</th>
+                <th>High School & Under</th>
                 <td>$150.00 Summer</td>
                 <td>$150.00 School Year</td>
             </tr>
             <tr>
-                <th class="rotate">Junior (20 & Under)</th>
+                <th>Junior (20 & Under)</th>
                 <td>$400.00</td>
             </tr>
             <tr>
-                <th class="rotate">Single</th>
+                <th>Single</th>
                 <td>$500.00</td>
             </tr>
             <tr>
-                <th class="rotate">Family</th>
+                <th>Family</th>
                 <td>$500.00 1st Semester</td>
                 <td>$225.00 Each Additional</td>
             </tr>
             <tr>
-                <th class="rotate">Senior</th>
+                <th>Senior</th>
                 <td>$400.00</td>
             </tr>
             <tr>
-                <th class="rotate">Senior Family</th>
+                <th>Senior Family</th>
                 <td>$225.00 Each Additional</td>
             </tr>
             <tfoot>

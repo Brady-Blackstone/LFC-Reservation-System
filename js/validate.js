@@ -1,7 +1,5 @@
 function validateSignupForm()
 {
-    console.log('validateSignupForm() called');
-
     const userID = document.getElementById('userID').value;
     const pwd = document.getElementById('pwd').value;
     const cpwd = document.getElementById('cpwd').value;
