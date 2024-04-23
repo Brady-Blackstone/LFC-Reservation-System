@@ -30,7 +30,7 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['admin']))
         }
         else if (isset($_SESSION['admin']))
         {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
         }
         pageHeader("Reservations", $arr);
         ?>

@@ -28,7 +28,7 @@ session_start();
         }
         else if (isset($_SESSION['admin']))
         {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
         }
         else
         {

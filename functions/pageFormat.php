@@ -10,10 +10,6 @@ function pageHeader($title, $arr)
         {
             $mLink = "index.php";
         }
-        elseif ($item == "Admin Page")
-        {
-            $mLink = "Admin.php";
-        }
         elseif ($item == "Contact Us")
         {
             $mLink = "Contact-us.php";

@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin']))
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Page | littlefishingcreek</title>
+        <title>Dashboard | littlefishingcreek</title>
         
         <link rel="stylesheet" href="./css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
@@ -41,8 +41,8 @@ if (!isset($_SESSION['admin']))
         require_once './functions/pageFormat.php';
 
         // Display navigation bar for the admin
-        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
-        pageHeader("Admin Page", $arr);
+        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
+        pageHeader("Dashboard", $arr);
 
         // Display an error message if there are no financial records in the database (which there already should be)
         if (isset($_SESSION['errMsg']))
@@ -53,7 +53,7 @@ if (!isset($_SESSION['admin']))
         }
         ?>
 
-        <h2>Admin Page</h2>
+        <h2>Dashboard</h2>
 
         <br><br>
 

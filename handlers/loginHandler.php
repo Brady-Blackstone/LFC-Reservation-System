@@ -33,7 +33,7 @@ if ($stmt->rowCount() > 0)
     {
         // Start an admin session for the admin
         $_SESSION['admin'] = $userID;
-        header("Location: ../Admin.php");
+        header("Location: ../Dashboard.php");
         exit();
     }
 }
