@@ -16,6 +16,13 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['admin']))
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
               crossorigin="anonymous">
+        <style>
+            caption
+            {
+                color: black;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <h1>Little Fishing Creek Golf Course</h1>
@@ -57,6 +64,8 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['admin']))
         <input type = "text" name = "phone" id = "phone" required>
         <br>
         </form>
+
+        <br>
 
         <div class = "container">
             <div class = "row gx-5 mt-4">
