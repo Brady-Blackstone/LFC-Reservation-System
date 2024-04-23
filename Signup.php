@@ -46,7 +46,7 @@ session_start();
         <div class="container d-flex justify-content-center signup_box">
             <h2>Signup</h2>
             <br>
-            <p>Please fill in the following fields to create an account</p>
+            <p>Please fill in the required (*) fields to create an account</p>
             <form action="./handlers/signupHandler.php" onsubmit="return validateSignupForm()" method="POST">
                 <!-- 1st Row: Name -->
                 <div class="row mb-1">
@@ -64,7 +64,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-                 <!-- 4th Row: Username and Password -->
+                 <!-- 2nd Row: Username and Password -->
                  <div class="row mb-1">
                     <div class="col-sm">
                         <div class="form-floating">
@@ -85,7 +85,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <!-- 2nd Row: Contact Information -->
+                <!-- 3rd Row: Contact Information -->
                 <div class="row mb-1">
                     <label>Contact Information*</label>
                     <div class="col-sm">
@@ -96,12 +96,12 @@ session_start();
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="email" class="form-control" placeholder="Email*" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}(?:.[a-zA-Z]{2,})?" id="email" name="email" required>
+                            <input type="email" class="form-control" placeholder="Email*" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="email" name="email" required>
                             <label for="email">Email*</label>
                         </div>
                     </div>
                 </div>
-                <!-- 3rd Row: Card Details -->
+                <!-- 4th Row: Card Details -->
                 <div class="row mb-1">
                 <label>Card Details</label>
                     <div class="col-sm">
@@ -119,9 +119,9 @@ session_start();
                     </div>
                 </div>
                 <img src="img/WeAccept-Img.jpg" alt="WeAccept-Img.jpg" class="acceptImg" width="175px" height="40px">
-                <!-- 4th Row: Expiration Date -->
+                <!-- 5th Row: Expiration Date -->
                 <div class="row mb-1">
-                <label>Expiration Date*</label>
+                <label>Expiration Date</label>
                     <div class="col-sm">
                         <select class="form-select" placeholder="Month" id="month" name="month">
                             <option disabled selected>Month</option>

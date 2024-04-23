@@ -25,11 +25,11 @@ function validateSignupForm()
     }
 
     // Validate password
-    let pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\s`\'"\\<>%$&+=]{12,}$/;
+    let pwdRegex = /^(?=.*[a-zA-Z\d])[^\s]{6,}$/;
     if (!pwdRegex.test(pwd))
     {
         // Send an error message if the password doesn't meet the criteria
-        displayErrMsg("Error: Password must be at least 12 characters long and contain at least one uppercase letter, one lowercase letter, one number, one symbol, and not contain backticks (`), double and single quotes (\" '), backslashes (/), angle brackets (< >), ampersands (&), percent signs (%), dollar signs ($), or plus signs (+)");
+        displayErrMsg("Error: Password must be at least 6 characters long, and contain at least one letter and one number");
         return false;
     }
 
@@ -52,7 +52,7 @@ function validateSignupForm()
     }
 
     // Validate email address
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email))
     {
         // Send an error message if the email address is invalid
