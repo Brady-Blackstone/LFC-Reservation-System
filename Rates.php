@@ -130,7 +130,7 @@ session_start();
                     <th colspan="6">**Tee times are encouraged on Weekends and Holidays**</th>
                 </tr>
                 <tr>
-                    <th colspan="6">**Golf Shop phone # 478-445-0796**</th>
+                    <th colspan="6">**Golf Shop phone # 478-445-0796</th>
                 </tr>
             </tfoot>
         </table>
