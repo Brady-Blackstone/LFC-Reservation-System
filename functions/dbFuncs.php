@@ -2,10 +2,10 @@
 function connectDB()
 {
     // for local server
-    $host = "localhost";
-    $db = "LFC_DB";
+     $host = "localhost";
+    $db ="LFC_DB";
     $user = "phpUser";
-    $pwd = "PHPUser@12345";
+    $pwd = "PhpUser@1234";
 
     // for production server
     // $host = "localhost";
