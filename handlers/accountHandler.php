@@ -10,13 +10,7 @@ $pdo = connectDB();
 
 try
 {
-    $default = "
-        SET @del_user = CONCAT('DeletedUser', UUID());
-        SET @del_pwd = CONCAT('DefaultPassword', UUID());
-    ";
-    $pdo->exec($default);
-
-    $sql = $sql = "UPDATE MEMBERS SET USERNAME = @del_user, PASSWORD = @del_pwd, STATUS = \"DEACTIVATED\" WHERE USERNAME = ?;";
+    $sql = $sql = "UPDATE MEMBERS SET STATUS = \"DEACTIVATED\" WHERE USERNAME = ?;";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$userID]);
 
