@@ -2,10 +2,10 @@
 session_start();
 require_once '../functions/dbFuncs.php';
 
-// Check if the user entered in all credentials
+// Check if the user entered in all required credentials
 if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['userID']) || empty($_POST['pwd']) || empty($_POST['cpwd']) || empty($_POST['phone']) || empty($_POST['email'])) 
 {
-    $_SESSION['errMsg'] = "Error: Username and password are required.";
+    $_SESSION['errMsg'] = "Error: Please fill out all required fields.";
     header("Location: ../Login.php");
     exit();
 }

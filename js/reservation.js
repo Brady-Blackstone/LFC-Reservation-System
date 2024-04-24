@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function()
             var responseData = JSON.parse(xhr.responseText);
 
             // Iterate over responseData array and populate table
-            responseData.Reservation_Records.forEach(function(item) 
+            responseData.forEach(function(item) 
             {
                 // Format the date as MM/DD/YYYY
                 // Also adjust for the timezone difference between the server and database

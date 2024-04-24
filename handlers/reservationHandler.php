@@ -23,19 +23,11 @@ function fetchData()
         // Connect to the database
         $pdo = connectDB();
 
-
-
         // Fetch all financial transaction records
-        $rsql = "SELECT * FROM RESERVATIONS;";
-        $rstmt = $pdo->prepare($rsql);
-        $rstmt->execute();
-        $rdata = $rstmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Fetch all records in associative array format
-        $records = array
-        (
-            "Reservation_Records" => $rdata
-        );
+        $sql = "SELECT * FROM RESERVATIONS;";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $pdo = null;
 
@@ -43,7 +35,7 @@ function fetchData()
     } catch (PDOException $e)
     {
         error_log("PODException: ".$e->getMessage());
-        $_SESSION['errMsg'] = "No financial records found.";
+        $_SESSION['errMsg'] = "No reservations found.";
         return [];
     }
 }
