@@ -39,7 +39,7 @@ if ($stmt->rowCount() > 0)
 }
 
 // Check if Member
-$sql = "SELECT * FROM MEMBERS WHERE USERNAME = ?;";
+$sql = "SELECT * FROM MEMBERS WHERE USERNAME = ? AND STATUS = \"ACTIVE\";";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$userID]);
 
