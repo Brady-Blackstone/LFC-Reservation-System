@@ -24,11 +24,11 @@ session_start();
         // Display the navigation bar based on user/admin privelages or if no one is logged in
         if (isset($_SESSION['user']))
         {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Contact Us");
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Profile", "Contact Us");
         }
         else if (isset($_SESSION['admin']))
         {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Admin Page");
+            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
         }
         else
         {
