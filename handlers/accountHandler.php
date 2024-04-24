@@ -16,7 +16,7 @@ try
     ";
     $pdo->exec($default);
 
-    $sql = $sql = "UPDATE MEMBERS SET USERNAME = @del_user, PASSWORD = @del_pwd, STATUS = 'DEACTIVATED' WHERE USERNAME = ?;";
+    $sql = $sql = "UPDATE MEMBERS SET USERNAME = @del_user, PASSWORD = @del_pwd, STATUS = \"DEACTIVATED\" WHERE USERNAME = ?;";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$userID]);
 
