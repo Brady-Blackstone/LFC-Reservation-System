@@ -48,10 +48,10 @@ if (!preg_match('/^[a-zA-Z0-9_-]+$/', $userID))
 }
 
 // Validate password
-if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\s`\'"\\<>%$&+=]{12,}$/', $pwd)) 
+if (!preg_match('/^(?=.*[a-zA-Z\d])[^\s]{6,}$/', $pwd)) 
 {
     // Send an error message if the password doesn't meet the criteria
-    $_SESSION['errMsg'] = "Error: Password must be at least 12 characters long and contain at least one uppercase letter, one lowercase letter, one number, and not contain backticks (`), double and single quotes (\" '), backslashes (/), angle brackets (< >), ampersands (&), percent signs (%), dollar signs ($), or plus signs (+)";
+    $_SESSION['errMsg'] = "Error: Password must be at least 6 characters long, and contain at least one letter and one number";
     header("Location: ../Signup.php");
     exit();
 }
