@@ -258,7 +258,7 @@ session_start();
 
         // _________________________________________________________________________________________________________________________
 
-                // Populate the Year dropdown menu with years ranging from 1900 - Today
+                // Populate the Year dropdown menu with years ranging from the current year - 5 years in the future
                 let yearDrop = document.getElementById('year');
                 let curYear = new Date().getFullYear();
                 let endYear = curYear + 5;
