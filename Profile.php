@@ -29,19 +29,8 @@ if (!isset($_SESSION['user']))
         <?php
         require_once './functions/pageFormat.php';
 
-        // Display the navigation bar based on user/admin privelages or if no one is logged in
-        if (isset($_SESSION['user']))
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Profile", "Contact Us");
-        }
-        else if (isset($_SESSION['admin']))
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
-        }
-        else
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Login", "Signup", "Contact Us");
-        }
+        // Display the navigation bar for the user
+        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Profile", "Contact Us");
         pageHeader("Profile", $arr);
 
         // Display an error message if the deactivation was unsuccessful
