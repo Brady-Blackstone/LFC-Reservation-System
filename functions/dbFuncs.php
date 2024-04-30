@@ -2,16 +2,16 @@
 function connectDB()
 {
     // for Brady's local server
-    $host = "localhost";
-    $db ="LFC_DB";
-    $user = "phpUser";
-    $pwd = "PHPUser@12345";
+    //$host = "localhost";
+    //$db ="LFC_DB";
+    //$user = "phpUser";
+    //$pwd = "PHPUser@12345";
 
     // for Grant's local server
-    // $host = "localhost";
-    // $db ="LFC_DB";
-    // $user = "phpUser";
-    // $pwd = "PhpUser@1234";
+     $host = "localhost";
+     $db ="LFC_DB";
+     $user = "phpUser";
+     $pwd = "PhpUser@1234";
 
     // for production server
     // $host = "localhost";
