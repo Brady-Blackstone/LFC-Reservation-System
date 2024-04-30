@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user']) && !isset($_SESSION['admin']))
+if (!isset($_SESSION['user']))
     die("No access!");
 ?>
 
@@ -30,15 +30,8 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['admin']))
         <?php
         require_once './functions/pageFormat.php';
 
-        // Display the navigation bar based on user/admin privelages or if no one is logged in
-        if (isset($_SESSION['user']))
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Profile", "Contact Us");
-        }
-        else if (isset($_SESSION['admin']))
-        {
-            $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
-        }
+        // Display the navigation bar for the user
+        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Profile", "Contact Us");
         pageHeader("Reservations", $arr);
         ?>
 
