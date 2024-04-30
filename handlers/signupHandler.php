@@ -95,7 +95,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$userID]);
 if ($stmt->fetchColumn() > 0) 
 {
-    $_SESSION['errMsg'] = "Error: Username already exists";
+    $_SESSION['errMsg'] = "Error: Username already exists, please try again";
     header("Location: ../Signup.php");
     exit();
 }
@@ -106,7 +106,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$phone]);
 if ($stmt->fetchColumn() > 0) 
 {
-    $_SESSION['errMsg'] = "Error: Phone Number already exists";
+    $_SESSION['errMsg'] = "Error: Phone Number already exists, please try again";
     header("Location: ../Signup.php");
     exit();
 }
@@ -117,7 +117,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$email]);
 if ($stmt->fetchColumn() > 0) 
 {
-    $_SESSION['errMsg'] = "Error: Email Address already exists";
+    $_SESSION['errMsg'] = "Error: Email Address already exists, please try again";
     header("Location: ../Signup.php");
     exit();
 }
