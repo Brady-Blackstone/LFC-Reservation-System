@@ -26,7 +26,7 @@ function fetchData($user)
         // Connect to the database
         $pdo = connectDB();
 
-        // Fetch all financial transaction records
+        // Fetch all member records
         $sql = "SELECT * FROM MEMBERS WHERE USERNAME = ?;";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$user]);

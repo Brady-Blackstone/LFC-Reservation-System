@@ -29,7 +29,7 @@ function fetchData()
         $fstmt->execute();
         $fdata = $fstmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Fetch all financial transaction records
+        // Fetch all reservations records
         $rsql = "SELECT * FROM RESERVATIONS;";
         $rstmt = $pdo->prepare($rsql);
         $rstmt->execute();
