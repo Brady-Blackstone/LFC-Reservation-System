@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin']))
         require_once './functions/pageFormat.php';
 
         // Display navigation bar for the admin
-        $arr = array("Home", "About", "Rates", "Events", "Logout", "Reservations", "Dashboard");
+        $arr = array("Home", "About", "Rates", "Events", "Logout", "Dashboard");
         pageHeader("Dashboard", $arr);
 
         // Display an error message if there are no financial records in the database (which there already should be)
