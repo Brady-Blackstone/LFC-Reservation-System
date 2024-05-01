@@ -10,11 +10,11 @@ if (!isset($_SESSION['user'])) {
 }
 
 $userID = $_SESSION['user'];
-$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
 
 switch ($action) {
     case 'bookData':
-        $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+        $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_SPECIAL_CHARS);
         if ($date) {
             $result = bookData($userID, $date);
             echo json_encode($result);
@@ -25,25 +25,26 @@ switch ($action) {
 
     case 'editData':
         $reservationId = filter_input(INPUT_POST, 'reservationId', FILTER_SANITIZE_NUMBER_INT);
-        $newDate = filter_input(INPUT_POST, 'newDate', FILTER_SANITIZE_STRING);
+        $newDate = filter_input(INPUT_POST, 'newDate', FILTER_SANITIZE_SPECIAL_CHARS);
         if ($reservationId && $newDate) {
             echo json_encode(editData($userID, $reservationId, $newDate));
         } else {
             echo json_encode(['success' => false, 'error' => 'Missing reservation ID or new date']);
         }
         break;
+        case 'cancelData':
+            $reservationId = filter_input(INPUT_POST, 'reservationId', FILTER_SANITIZE_NUMBER_INT);
+            if ($reservationId) {
+                echo json_encode(cancelReservation($userID, $reservationId));
+            } else {
+                echo json_encode(['success' => false, 'error' => 'Reservation ID is missing']);
+            }
+        break;
     default:
         echo json_encode(['success' => false, 'error' => 'Action not supported']);
         break;
 
-    case 'cancelData':
-        $reservationId = filter_input(INPUT_POST, 'reservationId', FILTER_SANITIZE_NUMBER_INT);
-        if ($reservationId) {
-            echo json_encode(cancelReservation($userID, $reservationId));
-        } else {
-            echo json_encode(['success' => false, 'error' => 'Reservation ID is missing']);
-        }
-        break;
+    
 }
 exit();
 
