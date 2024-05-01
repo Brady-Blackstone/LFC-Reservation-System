@@ -32,6 +32,11 @@ if (!isset($_SESSION['admin']))
             {
                 margin-left: 35%;
             }
+
+            .inField
+            {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -58,6 +63,12 @@ if (!isset($_SESSION['admin']))
         <br><br>
 
         <div class="container">
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-2">
+                    <input type="text" id="searchInput" class="form-control inField" placeholder="Search By Member ID" maxlength="4">
+                </div>
+            </div>
+            <br>
             <div class="row gx-5 mt-4">
                 <div class="col">
                     <table id="ftable" class="table table-hover table-success table-md">

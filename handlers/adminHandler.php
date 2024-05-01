@@ -9,29 +9,43 @@ $action = htmlspecialchars($action, ENT_QUOTES, 'UTF-8');
 // Check if the action is 'fetchData'
 if ($action === 'fetchData') 
 {
-    // Call the fetchFinTrans function
-    $data = fetchData();
+    $memID = isset($_GET['memID']) ? $_GET['memID'] : null;
+    // Call the fetchData function
+    $data = fetchData($memID);
     // Return the data as JSON
     echo json_encode($data);
     exit;
 }
 
-function fetchData()
+function fetchData($memID = null)
 {
     try
     {
         // Connect to the database
         $pdo = connectDB();
 
-        // Fetch all financial transaction records
-        $fsql = "SELECT * FROM FINANCIAL_TRANSACTIONS;";
+        $fsql = "SELECT * FROM FINANCIAL_TRANSACTIONS";
+        $rsql = "SELECT * FROM RESERVATIONS";
+
+        if ($memID !== null) 
+        {
+            $fsql .= " WHERE MEMBER_ID = :memID";
+            $rsql .= " WHERE MEMBER_ID = :memID";
+        }
+
         $fstmt = $pdo->prepare($fsql);
+        $rstmt = $pdo->prepare($rsql);
+
+        if ($memID !== null) 
+        {
+            $fstmt->bindParam(':memID', $memID);
+            $rstmt->bindParam(':memID', $memID);
+        }
+
+        // Fetch all financial transaction and reservation records
         $fstmt->execute();
         $fdata = $fstmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Fetch all reservations records
-        $rsql = "SELECT * FROM RESERVATIONS;";
-        $rstmt = $pdo->prepare($rsql);
         $rstmt->execute();
         $rdata = $rstmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -45,10 +59,15 @@ function fetchData()
         $pdo = null;
 
         return $records;
-    } catch (PDOException $e)
+    } catch (PDOException $e) 
     {
-        error_log("PODException: ".$e->getMessage());
-        $_SESSION['errMsg'] = "No financial records found.";
+        error_log("PDOException: ".$e->getMessage());
+        $_SESSION['errMsg'] = "An error occurred while fetching data.";
+        return [];
+    } catch (Exception $e) 
+    {
+        error_log("Exception: ".$e->getMessage());
+        $_SESSION['errMsg'] = $e->getMessage();
         return [];
     }
 }
