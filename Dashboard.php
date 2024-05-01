@@ -10,7 +10,6 @@ if (!isset($_SESSION['admin']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard | littlefishingcreek</title>
-        
         <link rel="stylesheet" href="./css/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
@@ -49,7 +48,7 @@ if (!isset($_SESSION['admin']))
         $arr = array("Home", "About", "Rates", "Events", "Logout", "Dashboard");
         pageHeader("Dashboard", $arr);
 
-        // Display an error message if there are no financial records in the database (which there already should be)
+        // Display an error message if there are no financial records or reservations in the database (which there already should be)
         if (isset($_SESSION['errMsg']))
         {
             $m = $_SESSION['errMsg'];
