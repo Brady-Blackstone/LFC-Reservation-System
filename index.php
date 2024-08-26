@@ -41,13 +41,15 @@ session_start();
 
         <p>Little Fishing Creek Golf Course is the home of the finest golf course in Middle Georgia!</p>
 
-        <p>
-            Here at Little Fishing Creek we take pride not only in our course itself but also our 
-            loyal members and new patrons. Any and all golfers are welcome to play, no matter 
-            their level of skill. Each hole is unique in the fact that they all act different and provide 
-            a golfer with challenging and rigorous shots. Come out today and see what 
-            Little Fishing Creek Golf Course has to offer!
-        </p>
+        <div class="p-contain">
+            <p>
+                Here at Little Fishing Creek we take pride not only in our course itself but also our 
+                loyal members and new patrons. Any and all golfers are welcome to play, no matter 
+                their level of skill. Each hole is unique in the fact that they all act different and provide 
+                a golfer with challenging and rigorous shots. Come out today and see what 
+                Little Fishing Creek Golf Course has to offer!
+            </p>
+        </div>
 
         <p>To learn what the going rates are to play, visit the Rates page!</p>
         <p>To become a member or find out more information, visit the Membership page!</p>
