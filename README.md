@@ -141,7 +141,7 @@ If you want to access the admin pages, you have to manually enter in an admin ro
 Everytime you sign up a new row will be inserted into the Members table with all the information you entered in (not all fields are required). 
 <br>
 
-The credit card input fields are just for show and have actual functionality beyond validating each input field. It will not be inserted into the database whatsoever.
+The credit card input fields are just for show and have no actual functionality beyond validating each input field. It will not be inserted into the database whatsoever.
 <br>
 
 Admins can view all Member's reservations and financial transactions records via the dashboard. They can dynamically lookup any member's records by using their Member ID as the search key. 
