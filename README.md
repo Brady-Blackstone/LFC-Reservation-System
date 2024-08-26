@@ -6,18 +6,12 @@ This project is a simple implementation of an online reservation system for Litt
 This is a mock website of the original website: https://www.littlefishingcreek.com/ 
 <br>
 
-It includes:
-<br>
-&ensp; &ensp; &ensp; &ensp; - Client/Server User Authentication and Authorization 
-<br>
-&ensp; &ensp; &ensp; &ensp; - Cache history of current user logged in 
-<br>
-&ensp; &ensp; &ensp; &ensp; - Google Maps API for business location 
-<br>
-&ensp; &ensp; &ensp; &ensp; - A page to Book, Edit, or Cancel any member's reservations using JavaScript functions and AJAX (member access only; admins cannot reserve a tee time) 
-<br>
-&ensp; &ensp; &ensp; &ensp; - A page to dynamically search for member's reservations and financial transactions using a JavaScript function with AJAX (admin access only via PHP sessions) 
-<br>
+It includes:    
+&ensp; &ensp; &ensp; &ensp; - Client/Server User Authentication and Authorization    
+&ensp; &ensp; &ensp; &ensp; - Cache history of current user logged in    
+&ensp; &ensp; &ensp; &ensp; - Google Maps API for business location    
+&ensp; &ensp; &ensp; &ensp; - A page to Book, Edit, or Cancel any member's reservations using JavaScript functions and AJAX (member access only; admins cannot reserve a tee time)    
+&ensp; &ensp; &ensp; &ensp; - A page to dynamically search for member's reservations and financial transactions using a JavaScript function with AJAX (admin access only via PHP sessions)    
 &ensp; &ensp; &ensp; &ensp; - And much more... 
 <br><br>
 
@@ -26,10 +20,8 @@ It includes:
 In order to run this locally, you can use XAMPP (I used version OS X 8.0.28 for Mac, but Windows 8.0.30 should work just fine) 
 <br>
 
-Once downloaded and installed, find the location where the XAMPP folder was installed on your computer and navigate to the htdocs folder. There are 2 differenet ways of doing this: 
-<br>
-&ensp; &ensp; &ensp; &ensp; 1. Clicking on the htdocs alias 
-<br>
+Once downloaded and installed, find the location where the XAMPP folder was installed on your computer and navigate to the htdocs folder. There are 2 differenet ways of doing this:    
+&ensp; &ensp; &ensp; &ensp; 1. Clicking on the htdocs alias    
 &ensp; &ensp; &ensp; &ensp; 2. xamppfiles --> htdocs 
 <br>
 
@@ -40,10 +32,8 @@ Then, simply open up XAMPP's application manager (OS x -> manager-osx.app, Windo
 &ensp; &ensp; &ensp; &ensp; - For Mac users, you will have to enter in your computer's password in order to access the XAMPP Manager. 
 <br>
 
-After opening up the application manager, turn on Apache and MySQL servers: 
-<br>
-&ensp; &ensp; &ensp; &ensp; - OS x -> Click on the "Manage Servers" tab and start MySQL Database and Apache Web Server 
-<br>
+After opening up the application manager, turn on Apache and MySQL servers:    
+&ensp; &ensp; &ensp; &ensp; - OS x -> Click on the "Manage Servers" tab and start MySQL Database and Apache Web Server    
 &ensp; &ensp; &ensp; &ensp; - Windows -> Simply click start next to the Apache and MySQL services 
 <br>
 
@@ -124,14 +114,10 @@ After creating your new database, click on the "SQL" tab at the top of the page 
                     ADD CONSTRAINT `Reservation_FK` FOREIGN KEY (`MEMBER_ID`) REFERENCES `MEMBERS` (`MEMBER_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION; 
 <br>
 
-After creating a user account, the database, tables, and relationships, you can then finally start using this website locally on your computer. In order to access the database from your computer, modify the dbFuncs.php file in this way: 
-<br>
-&ensp; &ensp; &ensp; &ensp; $host = "localhost"; 
-<br>
-&ensp; &ensp; &ensp; &ensp; $db = "[your database name]"; 
-<br>
-&ensp; &ensp; &ensp; &ensp; $user = "[you username]"; 
-<br>
+After creating a user account, the database, tables, and relationships, you can then finally start using this website locally on your computer. In order to access the database from your computer, modify the dbFuncs.php file in this way:    
+&ensp; &ensp; &ensp; &ensp; $host = "localhost";    
+&ensp; &ensp; &ensp; &ensp; $db = "[your database name]";    
+&ensp; &ensp; &ensp; &ensp; $user = "[you username]";    
 &ensp; &ensp; &ensp; &ensp; $pwd = "[your password]"; 
 <br>
 
